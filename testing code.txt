@@ -1,0 +1,96 @@
+package majd;
+import java.util.ArrayList; 
+import java.util.Arrays; 
+import java.util.Scanner;
+
+public class Majd {
+
+   
+    public static void main(String[] args) {
+        int number;
+        String name;
+        String location;
+        String dateOfBirth;
+        double salary;
+        int yearsOfWork;
+        double workedHours;
+        Scanner scan = new Scanner(System.in);
+       // Employee employee = new FullTimeEmployee();
+        ArrayList<Employee> employee = new ArrayList<Employee>();
+        
+        while(true){
+            System.out.println("press the number to choose:");
+            System.out.println("1 add employee");
+            System.out.println("2 delete employee");
+            
+            int n = scan.nextInt();
+            if(n==1){
+                System.out.println("press the number to choose:");
+                System.out.println("1 add full time employee");
+                System.out.println("2 add long service employee");
+                System.out.println("3 part time employee");
+                int m = scan.nextInt();
+                 if(m==1){
+                 System.out.println("Enter employee number: ");
+                 number= scan.nextInt();
+                 System.out.println("Enter employee name: ");
+                 name = scan.nextLine();
+                 System.out.println("Enter employee location: ");
+                 location = scan.nextLine();
+                 System.out.println("Enter employee date of birth: ");
+                 dateOfBirth = scan.nextLine();
+                 System.out.println("Enter employee salary: ");
+                 salary = scan.nextDouble();
+                 System.out.println("Enter employee years of work: ");
+                 yearsOfWork = scan.nextInt();
+                 employee.add(new FullTimeEmployee(number,name,location,dateOfBirth,salary,yearsOfWork));
+                 }
+                 else if(m==2){
+                    System.out.println("Enter employee number: ");
+                 number= scan.nextInt();
+                 System.out.println("Enter employee name: ");
+                 name = scan.nextLine();
+                 System.out.println("Enter employee location: ");
+                 location = scan.nextLine();
+                 System.out.println("Enter employee date of birth: ");
+                 dateOfBirth = scan.nextLine();
+                 System.out.println("Enter employee salary: ");
+                 salary = scan.nextDouble();
+                 System.out.println("Enter employee years of work: ");
+                 yearsOfWork = scan.nextInt();
+                 employee.add(new LongServingEmployee(number,name,location,dateOfBirth,salary,yearsOfWork));
+                 }
+                 else if(m==3){
+                     System.out.println("Enter employee number: ");
+                 number= scan.nextInt();
+                 System.out.println("Enter employee name: ");
+                 name = scan.nextLine();
+                 System.out.println("Enter employee location: ");
+                 location = scan.nextLine();
+                 System.out.println("Enter employee date of birth: ");
+                 dateOfBirth = scan.nextLine();
+                 System.out.println("Enter employee worked hours");
+                 workedHours = scan.nextDouble();
+                 employee.add(new PartTimeEmployee(number,name,location,dateOfBirth,workedHours));
+            }
+            
+            }
+            
+        }
+       
+    }
+    public void addFullTimeEmployee(){
+        
+        //employee.add(new FullTimeEmployee(1,"mhmd", "lebanon", "7/21/1998",1000,5));
+        //System.out.println(((FullTimeEmployee)employee.get(0)).report());
+        System.out.println("Enter employee number: ");
+        System.out.println("Enter employee name: ");
+        System.out.println("Enter employee location: ");
+        System.out.println("Enter employee date of birth: ");
+        System.out.println("Enter employee salary: ");
+        System.out.println("Enter employee years of work: ");
+        
+    }
+    
+    
+}
